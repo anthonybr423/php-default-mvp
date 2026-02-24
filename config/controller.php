@@ -1,7 +1,4 @@
 <?php
-
-namespace App;
-
 class Controller
 {
     public function redirect($route, array $params = [])
