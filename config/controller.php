@@ -1,4 +1,7 @@
 <?php
+
+use Core\Model;
+
 class Controller
 {
     public function redirect($route, array $params = [])
@@ -13,10 +16,4 @@ class Controller
         $view = dirname(__DIR__) . "/src/views/" . $view . ".php";
         require_once($view);
     }
-
-    public function collect(array $data)
-    {
-        return $data;
-    }
-    
 }
