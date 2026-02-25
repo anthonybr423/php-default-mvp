@@ -13,4 +13,10 @@ class Controller
         $view = dirname(__DIR__) . "/src/views/" . $view . ".php";
         require_once($view);
     }
+
+    public function collect(array $data)
+    {
+        return $data;
+    }
+    
 }
