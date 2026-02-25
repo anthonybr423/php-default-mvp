@@ -1,4 +1,7 @@
 <?php
+
+use Core\Model;
+
 class Controller
 {
     public function redirect($route, array $params = [])
