@@ -100,7 +100,8 @@ abstract class Model
         return $sql;
     }
 
-    public function all(): array{
+    public function all(): array
+    {
         $this->bindings = [];
         $sql = $this->buildQuery();
         $stmt = getConnection()->prepare($sql);
@@ -108,17 +109,20 @@ abstract class Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function first(): ?array{
+    public function first(): ?array
+    {
         $this->limit = 1;
         $results = $this->all();
         return $results[0] ?? null;
     }
 
-    public function find(int $id): ?array{
+    public function find(int $id): ?array
+    {
         return $this->where("id", $id)->first();
     }
 
-    public function raw(string $sql): array{
+    public function raw(string $sql): array
+    {
         $stmt = getConnection()->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
